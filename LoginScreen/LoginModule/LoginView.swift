@@ -22,6 +22,9 @@ class LoginView: UIView {
         layer.addSublayer(gradientLayerOne)
         
         gradientLayerOne.frame = bounds
+        
+        let transform = CATransform3DIdentity
+        gradientLayerOne.transform = CATransform3DRotate(transform, 0.1, 0, 0, 1)
     }
     
     required init?(coder: NSCoder) {
