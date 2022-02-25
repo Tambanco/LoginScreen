@@ -12,7 +12,7 @@ class LoginView: UIView {
     // 1 layer
     let gradientLayerOne: CAGradientLayer = {
         let layer = CAGradientLayer()
-        layer.colors = [UIColor.red.cgColor, UIColor.green.cgColor]
+        layer.colors = [UIColor(rgb: 0xE7CDDB).cgColor, UIColor(rgb: 0xBD629B).cgColor]
         return layer
     }()
     
