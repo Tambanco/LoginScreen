@@ -19,7 +19,7 @@ class LoginView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .green
+//        backgroundColor = .green
         
         layer.addSublayer(gradientLayerOne)
         
