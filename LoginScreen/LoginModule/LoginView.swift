@@ -42,21 +42,22 @@ class LoginView: UIView {
         
         // Draw shapeLayerOne
         let pathOne = UIBezierPath()
-        pathOne.move(to: CGPoint(x: 0, y: 10))
+        pathOne.move(to: CGPoint(x: 0, y: 20))
         pathOne.addLine(to: CGPoint(x: frame.width, y: 0))
         pathOne.addLine(to: CGPoint(x: frame.width, y: frame.height))
         pathOne.addLine(to: CGPoint(x: 0, y: frame.height))
         
         shapeLayerOne.path = pathOne.cgPath
         gradientLayerOne.mask = shapeLayerOne
-        gradientLayerOne.opacity = 0.7
+        gradientLayerOne.opacity = 0.8
         
         // Draw shapeLayerTwo
         let pathTwo = UIBezierPath()
-        pathTwo.move(to: CGPoint(x: 0, y: 0))
-        pathTwo.addLine(to: CGPoint(x: frame.width/2, y: 50))
-        pathTwo.addLine(to: CGPoint(x: frame.width/2 + 50, y: 50))
-        pathTwo.addLine(to: CGPoint(x: frame.width, y: 10))
+        pathTwo.move(to: CGPoint(x: -100, y: 0))
+//        pathTwo.addQuadCurve(to: CGPoint(x: frame.width/2, y: 0), controlPoint: CGPoint(x: frame.width/2, y: -50))
+        pathTwo.addCurve(to: CGPoint(x: frame.width, y: 0),
+                         controlPoint1: CGPoint(x: 50, y: -50),
+                         controlPoint2: CGPoint(x: 0, y: 0))
         pathTwo.addLine(to: CGPoint(x: frame.width, y: frame.height))
         pathTwo.addLine(to: CGPoint(x: 0, y: frame.height))
 

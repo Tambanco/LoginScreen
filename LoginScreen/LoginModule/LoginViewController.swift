@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     
     func setupLoginView() {
         loginView = LoginView(frame: CGRect(x: 0,
-                                            y: CGFloat(Int(view.frame.height) - Int(view.frame.height * 0.45)),
+                                            y: CGFloat(Int(view.frame.height) - Int(view.frame.height * 0.46)),
                                             width: view.frame.width,
                                             height: view.frame.width))
         
