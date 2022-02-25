@@ -20,13 +20,11 @@ class LoginView: UIView {
     
     let shapeLayerOne: CAShapeLayer = {
         let layer = CAShapeLayer()
-//        layer.backgroundColor = UIColor(rgb: 0xF09754).cgColor
         return layer
     }()
     
     let shapeLayerTwo: CAShapeLayer = {
         let layer = CAShapeLayer()
-//        layer.backgroundColor = UIColor(rgb: 0xF09754).cgColor
         return layer
     }()
     
@@ -36,12 +34,13 @@ class LoginView: UIView {
         
         layer.addSublayer(shapeLayerOne)
         layer.addSublayer(shapeLayerTwo)
+        layer.addSublayer(gradientLayerOne)
         
-        
-        backgroundColor = UIColor(white: 1, alpha: 0.5)
         shapeLayerOne.frame = bounds
         shapeLayerTwo.frame = bounds
+        gradientLayerOne.frame = bounds
         
+        // Draw shapeLayerOne
         let pathOne = UIBezierPath()
         pathOne.move(to: CGPoint(x: 0, y: 10))
         pathOne.addLine(to: CGPoint(x: frame.width, y: 0))
@@ -49,23 +48,20 @@ class LoginView: UIView {
         pathOne.addLine(to: CGPoint(x: 0, y: frame.height))
         
         shapeLayerOne.path = pathOne.cgPath
+        gradientLayerOne.mask = shapeLayerOne
+        gradientLayerOne.opacity = 0.7
         
-        
-//        let transform = CATransform3DIdentity
-//        gradientLayerOne.transform = CATransform3DRotate(transform, -0.1, 0, 0, 1)
-        
-        let path = UIBezierPath()
-        path.move(to: CGPoint(x: 0, y: 0))
-        path.addLine(to: CGPoint(x: frame.width/2, y: 50))
-        path.addLine(to: CGPoint(x: frame.width/2 + 50, y: 50))
-        path.addLine(to: CGPoint(x: frame.width, y: 10))
-        path.addLine(to: CGPoint(x: frame.width, y: frame.height))
-        path.addLine(to: CGPoint(x: 0, y: frame.height))
-        
-        
-        shapeLayerTwo.path = path.cgPath
-//        gradientLayerTwo.fillColor = UIColor(rgb: 0xF09754, alpha: 0.5).cgColor
-        shapeLayerTwo.fillColor = UIColor(white: 1, alpha: 0.5).cgColor
+        // Draw shapeLayerTwo
+        let pathTwo = UIBezierPath()
+        pathTwo.move(to: CGPoint(x: 0, y: 0))
+        pathTwo.addLine(to: CGPoint(x: frame.width/2, y: 50))
+        pathTwo.addLine(to: CGPoint(x: frame.width/2 + 50, y: 50))
+        pathTwo.addLine(to: CGPoint(x: frame.width, y: 10))
+        pathTwo.addLine(to: CGPoint(x: frame.width, y: frame.height))
+        pathTwo.addLine(to: CGPoint(x: 0, y: frame.height))
+
+        shapeLayerTwo.path = pathTwo.cgPath
+        shapeLayerTwo.fillColor = UIColor(rgb: 0xF09754).cgColor
         
         
     }
