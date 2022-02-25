@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
-    let loginView = LoginView()
+    var loginView: LoginView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     }
     
     func setupLoginView() {
+        
+        loginView = LoginView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         
         view.addSubview(loginView)
         
