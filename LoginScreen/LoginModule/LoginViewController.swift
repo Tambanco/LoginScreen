@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
+        setupLoginView()
     }
     
     func setupLoginView() {
@@ -23,11 +23,11 @@ class LoginViewController: UIViewController {
         
         view.addSubview(loginView)
         
-        loginView.translatesAutoresizingMaskIntoConstraints = false
-        loginView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        loginView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        loginView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        loginView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        loginView.translatesAutoresizingMaskIntoConstraints = false
+//        loginView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        loginView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        loginView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        loginView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
     }
 }
