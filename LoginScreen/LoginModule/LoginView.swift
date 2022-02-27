@@ -12,7 +12,8 @@ class LoginView: UIView {
     // gradient
     let gradientLayerOne: CAGradientLayer = {
         let layer = CAGradientLayer()
-        layer.colors = [UIColor(rgb: 0xE7CDDB).cgColor, UIColor(rgb: 0xBD629B).cgColor]
+        layer.colors = [UIColor(rgb: 0xEFDEE7).cgColor,
+                        UIColor(rgb: 0xB56591).cgColor]
         return layer
     }()
     
@@ -55,14 +56,12 @@ class LoginView: UIView {
         pathTwo.move(to: CGPoint(x: -50, y: 0))
         pathTwo.addCurve(to: CGPoint(x: frame.width, y: 20),
                          controlPoint1: CGPoint(x: 100, y: -20),
-                         controlPoint2: CGPoint(x: 300, y: 50))
+                         controlPoint2: CGPoint(x: 250, y: 50))
         pathTwo.addLine(to: CGPoint(x: frame.width, y: frame.height))
         pathTwo.addLine(to: CGPoint(x: 0, y: frame.height))
         
         shapeLayerTwo.path = pathTwo.cgPath
         shapeLayerTwo.fillColor = UIColor(rgb: 0xF09754).cgColor
-        
-        
     }
     
     required init?(coder: NSCoder) {
