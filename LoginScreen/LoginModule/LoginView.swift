@@ -17,7 +17,6 @@ class LoginView: UIView {
     }()
     
     // 1 layer
-    
     let shapeLayerOne: CAShapeLayer = {
         let layer = CAShapeLayer()
         return layer
@@ -53,14 +52,13 @@ class LoginView: UIView {
         
         // Draw shapeLayerTwo
         let pathTwo = UIBezierPath()
-        pathTwo.move(to: CGPoint(x: -100, y: 0))
-//        pathTwo.addQuadCurve(to: CGPoint(x: frame.width/2, y: 0), controlPoint: CGPoint(x: frame.width/2, y: -50))
-        pathTwo.addCurve(to: CGPoint(x: frame.width, y: 0),
-                         controlPoint1: CGPoint(x: 50, y: -50),
-                         controlPoint2: CGPoint(x: 0, y: 0))
+        pathTwo.move(to: CGPoint(x: -50, y: 0))
+        pathTwo.addCurve(to: CGPoint(x: frame.width, y: 20),
+                         controlPoint1: CGPoint(x: 100, y: -20),
+                         controlPoint2: CGPoint(x: 300, y: 50))
         pathTwo.addLine(to: CGPoint(x: frame.width, y: frame.height))
         pathTwo.addLine(to: CGPoint(x: 0, y: frame.height))
-
+        
         shapeLayerTwo.path = pathTwo.cgPath
         shapeLayerTwo.fillColor = UIColor(rgb: 0xF09754).cgColor
         
