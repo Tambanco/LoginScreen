@@ -9,6 +9,7 @@ import UIKit
 
 class LoginView: UIView {
     
+    // MARK: - Elements
     // gradient
     let gradientLayerOne: CAGradientLayer = {
         let layer = CAGradientLayer()
@@ -28,13 +29,35 @@ class LoginView: UIView {
         return layer
     }()
     
+    // 2 layer
+    let corpImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "Asana_logo.png")
+//        imageView.backgroundColor = .red
+//        imageView.frame = CGRect(x: 99, y: 99, width: 99, height: 99)
+        return imageView
+    }()
     
+    let pages: UIPageControl = {
+        let page = UIPageControl()
+        page.numberOfPages = 3
+        return page
+    }()
+    
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         layer.addSublayer(shapeLayerOne)
         layer.addSublayer(shapeLayerTwo)
         layer.addSublayer(gradientLayerOne)
+        
+        addSubview(corpImage)
+        addSubview(pages)
+        
+        corpImage.translatesAutoresizingMaskIntoConstraints = true
+        corpImage.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
+        corpImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5).isActive = true
         
         shapeLayerOne.frame = bounds
         shapeLayerTwo.frame = bounds
