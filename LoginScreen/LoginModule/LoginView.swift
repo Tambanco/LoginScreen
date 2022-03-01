@@ -33,8 +33,8 @@ class LoginView: UIView {
     let corpImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Asana_logo.png")
-//        imageView.backgroundColor = .red
-//        imageView.frame = CGRect(x: 99, y: 99, width: 99, height: 99)
+        imageView.backgroundColor = .red
+        imageView.frame = CGRect(x: 99, y: 99, width: 99, height: 99)
         return imageView
     }()
     
@@ -65,8 +65,8 @@ class LoginView: UIView {
         
         // Draw shapeLayerOne
         let pathOne = UIBezierPath()
-        pathOne.move(to: CGPoint(x: 0, y: 20))
-        pathOne.addLine(to: CGPoint(x: frame.width, y: 0))
+        pathOne.move(to: CGPoint(x: 0, y: 590))
+        pathOne.addLine(to: CGPoint(x: frame.width, y: 575))
         pathOne.addLine(to: CGPoint(x: frame.width, y: frame.height))
         pathOne.addLine(to: CGPoint(x: 0, y: frame.height))
         
@@ -76,10 +76,10 @@ class LoginView: UIView {
         
         // Draw shapeLayerTwo
         let pathTwo = UIBezierPath()
-        pathTwo.move(to: CGPoint(x: -50, y: 0))
-        pathTwo.addCurve(to: CGPoint(x: frame.width, y: 20),
-                         controlPoint1: CGPoint(x: 100, y: -20),
-                         controlPoint2: CGPoint(x: 250, y: 50))
+        pathTwo.move(to: CGPoint(x: -200, y: 600))
+        pathTwo.addCurve(to: CGPoint(x: frame.width, y: 590),
+                         controlPoint1: CGPoint(x: 0, y: 520),
+                         controlPoint2: CGPoint(x: 250, y: 620))
         pathTwo.addLine(to: CGPoint(x: frame.width, y: frame.height))
         pathTwo.addLine(to: CGPoint(x: 0, y: frame.height))
         
