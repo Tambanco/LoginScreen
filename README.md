@@ -1,3 +1,3 @@
 # LoginScreen
-![alt text](https://github.com/Tambanco/LoginScreen/blob/bb0cb62374fa9b1c4b0ba3295acca21b61662a7f/LoginScreen.png)
+![alt text](https://github.com/Tambanco/LoginScreen/blob/d27fa9d2edc05fda0b42de6404e68c7e2a212034/LoginScreen.png)
 
