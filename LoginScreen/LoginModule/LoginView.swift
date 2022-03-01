@@ -13,8 +13,8 @@ class LoginView: UIView {
     // gradient
     let gradientLayerOne: CAGradientLayer = {
         let layer = CAGradientLayer()
-        layer.colors = [UIColor(rgb: 0xEFDEE7).cgColor,
-                        UIColor(rgb: 0xB56591).cgColor]
+        layer.colors = [UIColor(rgb: 0xff00ff).cgColor,
+                        UIColor(rgb: 0xB56591 ).cgColor]
         return layer
     }()
     
@@ -33,7 +33,7 @@ class LoginView: UIView {
     let corpImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Asana_logo.png")
-        imageView.frame = CGRect(x: 50, y: 200, width: 175, height: 40)
+        imageView.frame = CGRect(x: 30, y: 200, width: 150, height: 30)
         return imageView
     }()
     
@@ -57,6 +57,23 @@ class LoginView: UIView {
         return label
     }()
     
+    let signUpButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Sing Up", for: .normal)
+        button.setTitleColor(.darkGray, for: .normal)
+        button.layer.cornerRadius = 25
+        button.layer.masksToBounds = true
+        button.backgroundColor = .white
+        return button
+    }()
+    
+    let logInButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Log In", for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -70,13 +87,28 @@ class LoginView: UIView {
         
         pages.addSubview(pageOneLabel)
         
+        addSubview(signUpButton)
+        addSubview(logInButton)
+        
         corpImage.translatesAutoresizingMaskIntoConstraints = true
-        corpImage.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
-        corpImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5).isActive = true
         
         pageOneLabel.translatesAutoresizingMaskIntoConstraints = false
         pageOneLabel.leadingAnchor.constraint(equalTo: pages.leadingAnchor, constant: 20).isActive = true
         pageOneLabel.topAnchor.constraint(equalTo: pages.topAnchor, constant: 20).isActive = true
+        
+        signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        signUpButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40).isActive = true
+        signUpButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40).isActive = true
+        signUpButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        signUpButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        signUpButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 270).isActive = true
+        
+        logInButton.translatesAutoresizingMaskIntoConstraints = false
+        logInButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40).isActive = true
+        logInButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40).isActive = true
+        logInButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        logInButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        logInButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 320).isActive = true
         
         shapeLayerOne.frame = bounds
         shapeLayerTwo.frame = bounds
