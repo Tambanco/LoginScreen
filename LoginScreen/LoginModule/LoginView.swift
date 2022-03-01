@@ -8,7 +8,6 @@
 import UIKit
 
 class LoginView: UIView {
-    
     // MARK: - Elements
     // gradient
     let gradientLayerOne: CAGradientLayer = {
