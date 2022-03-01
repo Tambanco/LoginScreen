@@ -33,15 +33,28 @@ class LoginView: UIView {
     let corpImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Asana_logo.png")
-        imageView.backgroundColor = .red
-        imageView.frame = CGRect(x: 99, y: 99, width: 99, height: 99)
+        imageView.frame = CGRect(x: 50, y: 200, width: 175, height: 40)
         return imageView
     }()
     
     let pages: UIPageControl = {
         let page = UIPageControl()
-        page.numberOfPages = 3
+        page.numberOfPages = 4
+        page.frame = CGRect(x: 0, y: 350, width: 200, height: 300)
+        page.pageIndicatorTintColor = .lightGray
+        page.currentPageIndicatorTintColor = .darkGray
         return page
+    }()
+    
+    let pageOneLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 2
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.text = """
+                        Track your work.
+                        Get results.
+                    """
+        return label
     }()
     
     // MARK: - Init
@@ -55,9 +68,15 @@ class LoginView: UIView {
         addSubview(corpImage)
         addSubview(pages)
         
+        pages.addSubview(pageOneLabel)
+        
         corpImage.translatesAutoresizingMaskIntoConstraints = true
         corpImage.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
         corpImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5).isActive = true
+        
+        pageOneLabel.translatesAutoresizingMaskIntoConstraints = false
+        pageOneLabel.leadingAnchor.constraint(equalTo: pages.leadingAnchor, constant: 20).isActive = true
+        pageOneLabel.topAnchor.constraint(equalTo: pages.topAnchor, constant: 20).isActive = true
         
         shapeLayerOne.frame = bounds
         shapeLayerTwo.frame = bounds
